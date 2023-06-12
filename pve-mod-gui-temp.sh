@@ -96,11 +96,10 @@ function install_mod {
             textField: 'thermalstate',\n\
             renderer: function(value){\n\
               let objValue = JSON.parse(value);\n\
-              let core0 = objValue[\"coretemp-isa-0000\"][\"Core 0\"][\"temp2_input\"];\n\
-              let core1 = objValue[\"coretemp-isa-0000\"][\"Core 1\"][\"temp3_input\"];\n\
-              let core2 = objValue[\"coretemp-isa-0000\"][\"Core 2\"][\"temp4_input\"];\n\
-              let core3 = objValue[\"coretemp-isa-0000\"][\"Core 3\"][\"temp5_input\"];\n\
-              return \`Core 0: \$\{core0\} C | Core 1: \$\{core1\} C | Core 2: \$\{core2\} C | Core 3: \$\{core3\} C\`\n\
+              let core0 = objValue[\"k10temp-pci-00c3\"][\"Tctl\"][\"temp1_input\"];\n\
+              let core1 = objValue[\"k10temp-pci-00c3\"][\"Tccd1\"][\"temp3_input\"];\n\
+              let core2 = objValue[\"k10temp-pci-00c3\"][\"Tccd2\"][\"temp4_input\"];\n\
+              return \`Tctl: \$\{core0\} C | Core 1: \$\{core1\} C | Core 2: \$\{core2\} C\`\n\
             }\n\
         },\n\
         {\n\
